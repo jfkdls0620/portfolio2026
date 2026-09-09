@@ -11,6 +11,8 @@
   --selection: #d4e5d5;
   --mark-face: #111111;
   --mark-letter: #ffffff;
+  --header-bg: #f7f8f5d9;
+  --header-shadow: #1c2b2126;
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -34,6 +36,8 @@
   --selection: #2f4a39;
   --mark-face: #e7ece6;
   --mark-letter: #101310;
+  --header-bg: #101310d9;
+  --header-shadow: #00000073;
   color-scheme: dark;
 }
 * {
@@ -64,21 +68,43 @@ summary:focus-visible {
 button {
   font: inherit;
 }
-.page {
-  width: min(1160px, 100%);
+.shell {
+  display: flex;
+  flex-direction: column;
   min-height: 100svh;
-  margin: auto;
+}
+.page {
+  flex: 1;
+  width: min(1160px, 100%);
+  margin: 0 auto;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
 }
+/* 헤더는 .page 밖에 있어 배경과 그림자가 화면 전체 폭을 덮고,
+   안쪽 .header-inner가 본문과 같은 컬럼에 맞춰 정렬된다. */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  border-bottom: 1px solid var(--line);
+  background: var(--header-bg);
+  backdrop-filter: blur(14px);
+  transition: box-shadow 220ms ease;
+}
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+  width: min(1160px, 100%);
+  margin: 0 auto;
   min-height: 110px;
-  border-bottom: 1px solid var(--line);
+  padding: 0 40px;
+}
+/* 본문이 헤더 밑으로 들어가기 시작하면 그림자를 띄워 걸린 느낌을 준다. */
+.header.is-stuck {
+  box-shadow: 0 14px 28px -22px var(--header-shadow);
 }
 .wordmark {
   display: inline-flex;
@@ -250,14 +276,16 @@ h1 {
   .page {
     padding: 0 22px;
   }
-  .header {
-    min-height: 90px;
+  .header-inner {
     flex-wrap: wrap;
-    padding: 20px 0;
+    min-height: 90px;
+    padding: 20px 22px;
     gap: 20px;
   }
   main {
     padding: 44px 0 56px;
+    /* 고정 헤더에 가려지지 않도록 본문 이동 지점에 여백을 준다. */
+    scroll-margin-top: 100px;
   }
   .nav-link {
     padding: 0 12px;

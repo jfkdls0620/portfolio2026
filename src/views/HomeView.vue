@@ -21,22 +21,12 @@ const pad = (count: number) => String(count).padStart(2, "0")
         to="/Career">
         <span class="link-name">Career</span>
         <span class="link-count">{{ pad(careers.length) }}개 회사</span>
-        <span
-          class="link-arrow"
-          aria-hidden="true"
-          >↗</span
-        >
       </RouterLink>
       <RouterLink
         class="home-link"
         to="/Project">
         <span class="link-name">Projects</span>
         <span class="link-count">{{ pad(projects.length) }}개 프로젝트</span>
-        <span
-          class="link-arrow"
-          aria-hidden="true"
-          >↗</span
-        >
       </RouterLink>
     </nav>
   </div>
