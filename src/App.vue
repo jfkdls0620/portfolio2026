@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import BrandMark from './components/BrandMark.vue'
 
 const year = new Date().getFullYear()
 const scrollToTop = () =>
@@ -16,8 +17,7 @@ const scrollToTop = () =>
     <a class="skip-link" href="#main">본문으로 바로가기</a>
     <header class="header">
       <RouterLink class="wordmark" to="/" aria-label="김동현 포트폴리오 홈"
-        ><span class="brand-mark" aria-hidden="true">d.</span
-        ><span class="brand-name"
+        ><BrandMark :size="40" /><span class="brand-name"
           >김동현<small>Frontend Developer</small></span
         ></RouterLink
       >
