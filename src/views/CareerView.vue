@@ -141,16 +141,16 @@ const totalPeriod = (() => {
 }
 .timeline-heading h2 {
   margin: 0;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
 }
 .timeline-heading h2 span {
   margin-left: 8px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 0.8125rem;
 }
 .timeline-heading > span {
-  font-size: 12px;
+  font-size: 0.8125rem;
   color: var(--muted);
 }
 .timeline-total strong {
@@ -172,7 +172,7 @@ const totalPeriod = (() => {
 }
 .career-period {
   padding: 40px 0;
-  font-size: 12px;
+  font-size: 0.8125rem;
 }
 .career-period p {
   margin: 0 0 10px;
@@ -191,7 +191,7 @@ const totalPeriod = (() => {
   background: var(--accent-soft);
   border-radius: 20px;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 .current-badge span {
@@ -213,7 +213,7 @@ const totalPeriod = (() => {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #a4ad98;
+  background: var(--dot);
   outline: 6px solid var(--surface);
 }
 .current .career-content::before {
@@ -225,7 +225,7 @@ const totalPeriod = (() => {
 .career-role {
   margin: 0 0 10px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 0.8125rem;
 }
 h3 {
   margin: 0;
@@ -239,7 +239,7 @@ h3 {
   margin: 16px 0 20px;
   color: var(--muted);
   line-height: 1.85;
-  font-size: 15px;
+  font-size: 1rem;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -247,7 +247,7 @@ h3 {
   margin: 0 0 24px;
   padding-left: 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 0.9375rem;
   line-height: 1.85;
   overflow-wrap: anywhere;
 }
@@ -270,7 +270,7 @@ h3 {
   border-radius: 5px;
   background: var(--accent-soft);
   color: var(--accent);
-  font-size: 12px;
+  font-size: 0.8125rem;
   line-height: 1.4;
 }
 @media (max-width: 700px) {

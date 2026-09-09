@@ -201,7 +201,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 }
 .project-total span {
   margin-top: 12px;
-  font-size: 10px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.15em;
 }
@@ -225,7 +225,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
   padding: 10px 15px;
   min-height: 44px;
   font: inherit;
-  font-size: 12px;
+  font-size: 0.8125rem;
   cursor: pointer;
 }
 .company-filters button:hover {
@@ -234,7 +234,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 .company-filters button[aria-pressed="true"] {
   background: var(--ink);
   border-color: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
 }
 .company-filters button:focus-visible,
 summary:focus-visible {
@@ -243,7 +243,7 @@ summary:focus-visible {
 }
 .result-count {
   margin: 20px 0 0;
-  font-size: 12px;
+  font-size: 0.8125rem;
   color: var(--muted);
 }
 .project {
@@ -260,12 +260,12 @@ summary:focus-visible {
   gap: 16px;
 }
 .project-meta {
-  font-size: 12px;
+  font-size: 0.8125rem;
 }
 .project-number {
   display: block;
   margin-bottom: 24px;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
@@ -295,7 +295,7 @@ h2 {
 }
 .project-summary {
   margin: 16px 0 20px;
-  font-size: 15px;
+  font-size: 1rem;
   color: var(--muted);
   line-height: 1.85;
   word-break: keep-all;
@@ -314,7 +314,7 @@ h2 {
   border-radius: 5px;
   background: var(--accent-soft);
   color: var(--accent);
-  font-size: 12px;
+  font-size: 0.8125rem;
   line-height: 1.4;
 }
 .project-details {
@@ -329,7 +329,7 @@ summary {
   padding: 12px 0;
   border-top: 1px solid var(--line);
   cursor: pointer;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 600;
   list-style: none;
 }
@@ -340,7 +340,7 @@ summary:hover {
   color: var(--accent);
 }
 .toggle-icon {
-  font-size: 23px;
+  font-size: 1.4375rem;
   font-weight: 400;
 }
 .label-open {
@@ -365,14 +365,14 @@ details[open] .toggle-icon {
 }
 h3 {
   margin: 0 0 10px;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 .detail-content ul {
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 0.9375rem;
   line-height: 1.9;
   overflow-wrap: anywhere;
 }
@@ -405,14 +405,14 @@ figure img {
 figcaption {
   margin-top: 8px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 0.8125rem;
 }
 .project-links {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .project-links a {
   padding: 12px 0;

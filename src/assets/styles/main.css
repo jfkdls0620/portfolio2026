@@ -2,16 +2,39 @@
   --canvas: #f7f8f5;
   --surface: #ffffff;
   --ink: #24332b;
-  --muted: #66736a;
+  --muted: #5b675f;
   --accent: #35674b;
   --accent-soft: #edf3ed;
   --line: #dde4dc;
+  --on-ink: #ffffff;
+  --dot: #a4ad98;
+  --selection: #d4e5d5;
+  --mark-face: #111111;
+  --mark-letter: #ffffff;
+  color-scheme: light dark;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--canvas);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+/* 시스템 다크 모드를 따른다. 토큰만 바꾸므로 개별 규칙은 그대로 동작한다. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #101310;
+    --surface: #191d19;
+    --ink: #e7ece6;
+    --muted: #a2aea3;
+    --accent: #82bd98;
+    --accent-soft: #1c2a21;
+    --line: #2c332c;
+    --on-ink: #101310;
+    --dot: #556056;
+    --selection: #2f4a39;
+    --mark-face: #e7ece6;
+    --mark-letter: #101310;
+  }
 }
 * {
   box-sizing: border-box;
@@ -21,7 +44,7 @@ body {
   min-width: 320px;
 }
 ::selection {
-  background: #d4e5d5;
+  background: var(--selection);
   color: var(--ink);
 }
 a {
@@ -60,6 +83,7 @@ button {
 .wordmark {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 12px;
 }
 .wordmark:hover {
@@ -70,7 +94,7 @@ button {
   flex: none;
 }
 .brand-name {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -78,7 +102,7 @@ button {
   display: block;
   margin-top: 4px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 0.75rem;
   letter-spacing: 0.01em;
   font-weight: 400;
 }
@@ -94,7 +118,7 @@ button {
   padding: 0 16px;
   border-radius: 8px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .nav-link:hover {
   background: var(--accent-soft);
@@ -125,7 +149,7 @@ main:focus {
   gap: 10px;
   margin: 0;
   color: var(--accent);
-  font-size: 10px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
 }
@@ -150,7 +174,7 @@ h1 {
 .description {
   max-width: 36rem;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.9;
   word-break: keep-all;
 }
@@ -166,14 +190,14 @@ h1 {
   gap: 20px;
 }
 .footer-name {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
 }
 .footer-name span {
   display: block;
   margin-top: 10px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.8125rem;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -185,13 +209,13 @@ h1 {
   gap: 24px;
   align-items: center;
   min-height: 44px;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .footer-bottom {
   margin-top: 32px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
-  font-size: 11px;
+  font-size: 0.75rem;
   color: var(--muted);
 }
 .footer-bottom button {
@@ -201,7 +225,7 @@ h1 {
   min-height: 44px;
   padding: 0 4px 0 12px;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 0.75rem;
 }
 .footer-bottom button span {
   margin-left: 12px;
@@ -215,7 +239,7 @@ h1 {
   top: -100px;
   z-index: 10;
   background: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
   padding: 14px 20px;
   border-radius: 8px;
 }

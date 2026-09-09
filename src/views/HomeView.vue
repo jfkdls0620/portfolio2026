@@ -87,11 +87,11 @@ const pad = (count: number) => String(count).padStart(2, "0")
 }
 .link-count {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .link-arrow {
   align-self: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--muted);
 }
 .home-link:hover .link-arrow {
