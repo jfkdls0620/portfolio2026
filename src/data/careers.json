@@ -1,0 +1,113 @@
+[
+  {
+    "id": "chang-healthcare",
+    "company": "창헬스케어",
+    "period": { "start": "2025-06", "end": null },
+    "isCurrent": true,
+    "employmentType": "정규직",
+    "role": "프론트엔드 개발",
+    "summary": "헬스케어 웹뷰, 건강검진 리포트, 사용자 웹앱과 운영 관리자 화면을 개발했습니다.",
+    "responsibilities": [
+      "건강기록·설문·검진 분석 등 사용자 서비스와 WebView·Native 연동 개발",
+      "리포트 UI 라이브러리 및 관리자 공통 컴포넌트 설계",
+      "건강코칭 운영을 위한 콘텐츠 관리, 실시간 채팅과 데이터 시각화 구현",
+      "온뱅크 헬스케어 프론트엔드 단독 개발 및 배포 파이프라인 구성"
+    ],
+    "techStack": [
+      "Vue 3",
+      "Vite",
+      "Pinia",
+      "Vuex",
+      "Tailwind CSS",
+      "SCSS",
+      "Axios",
+      "Docker",
+      "Nginx"
+    ],
+    "sourcePages": [1, 2, 3]
+  },
+  {
+    "id": "wizardsoft",
+    "company": "(주)위자드소프트",
+    "period": { "start": "2023-08", "end": "2024-11" },
+    "isCurrent": false,
+    "employmentType": "정규직",
+    "role": "프론트엔드 개발",
+    "summary": "폴바셋 F&B 서비스 웹앱의 상품·결제·개인화 기능을 개발하고 사용성을 개선했습니다.",
+    "responsibilities": [
+      "상품 옵션, 모바일 상품권, 차량·결제카드 등록 및 선불카드 충전 기능 개발",
+      "사용자 설정 복원과 실시간 유효성 검증을 통한 사용자 경험 개선",
+      "이미지 지연 로딩, 상태 관리와 컴포넌트 구조 개선 및 iOS 브라우저 대응"
+    ],
+    "techStack": [
+      "Vue.js",
+      "Vuex",
+      "Vue Router",
+      "REST API",
+      "SCSS",
+      "Axios",
+      "HTML"
+    ],
+    "sourcePages": [3]
+  },
+  {
+    "id": "wholesale-doctor",
+    "company": "주식회사홀세일닥터",
+    "period": { "start": "2020-03", "end": "2021-01" },
+    "isCurrent": false,
+    "employmentType": "정규직",
+    "role": "웹앱 개발",
+    "summary": "계란이력관리 웹앱 개발에 참여했습니다.",
+    "responsibilities": [],
+    "techStack": ["Vue.js", "React Native", "HTML", "SCSS", "CSS"],
+    "sourcePages": [4]
+  },
+  {
+    "id": "yongsan-house",
+    "company": "용산집",
+    "period": { "start": "2019-07", "end": "2020-03" },
+    "isCurrent": false,
+    "employmentType": "정규직",
+    "role": "프론트엔드 개발",
+    "summary": "Vue.js를 이용한 반응형 웹을 개발했습니다.",
+    "responsibilities": [],
+    "techStack": ["Vue.js", "JavaScript", "HTML", "SCSS"],
+    "sourcePages": [4]
+  },
+  {
+    "id": "webbiz-creative",
+    "company": "주식회사웹비즈크리에이티브",
+    "period": { "start": "2017-10", "end": "2019-05" },
+    "isCurrent": false,
+    "employmentType": "정규직",
+    "role": "웹·앱 퍼블리싱",
+    "summary": "반응형 웹 퍼블리싱과 건강보험공단 똑똑건강UP 앱 퍼블리싱에 참여했습니다.",
+    "responsibilities": [],
+    "techStack": ["JavaScript", "HTML", "SCSS", "CSS", "jQuery"],
+    "sourcePages": [4]
+  },
+  {
+    "id": "louvre",
+    "company": "루브",
+    "period": { "start": "2013-07", "end": "2014-10" },
+    "isCurrent": false,
+    "employmentType": "정규직",
+    "role": "웹 퍼블리싱",
+    "summary": "DDP(동대문 디자인 플라자) 프로모션 웹 페이지를 퍼블리싱했습니다.",
+    "responsibilities": [],
+    "techStack": ["JavaScript", "HTML", "SCSS", "CSS", "jQuery"],
+    "sourcePages": [4]
+  },
+  {
+    "id": "ewideplus",
+    "company": "이와이드플러스",
+    "period": { "start": "2012-09", "end": "2013-06" },
+    "isCurrent": false,
+    "employmentType": "정규직",
+    "role": "웹디자인",
+    "summary": "웹디자인 유지보수 업무를 담당했습니다.",
+    "responsibilities": [],
+    "techStack": ["Photoshop", "Illustrator"],
+    "sourcePages": [4]
+  }
+]

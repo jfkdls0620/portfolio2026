@@ -26,13 +26,15 @@ npm run dev
 
 ## 구조
 
-- `src/App.vue`: 포트폴리오 시작 화면
+- `src/App.vue`: 공통 헤더, 메뉴, 푸터
+- `src/router/index.ts`: 홈(`/`), 커리어(`/Career`), 프로젝트(`/Project`) 라우팅
+- `src/views/`: 메뉴별 페이지
 - `src/assets/styles/main.css`: 공통 스타일
 - `src/main.ts`: 앱 진입점
 - `public/`: 가공 없이 배포할 정적 파일
 - `vite.config.ts`: Vue 플러그인과 배포 경로
 
-현재는 단일 페이지로 시작하며, 라우터와 상태 관리 라이브러리는 필요해질 때 추가합니다.
+Vue Router로 페이지를 전환하며, 선택된 메뉴를 표시합니다. 프로젝트는 `src/data/projects.json`에서 읽어 회사별 필터와 상세 펼치기를 제공합니다. 커리어는 `src/data/careers.json`에서 회사별 재직 기간·담당 업무·기술을 읽어 타임라인으로 표시합니다. 데이터 작성 방법은 `src/data/README.md`를 참고하세요. 빌드 시 각 경로에 `index.html`을 생성하여 GitHub Pages에서도 직접 접속과 새로고침을 지원합니다.
 
 ## 소스 관리와 GitHub Pages
 
