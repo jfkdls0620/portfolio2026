@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {RouterLink, RouterView} from "vue-router"
 import BrandMark from "./components/BrandMark.vue"
+import ThemeToggle from "./components/ThemeToggle.vue"
 
 const year = new Date().getFullYear()
 const scrollToTop = () =>
@@ -43,6 +44,7 @@ const scrollToTop = () =>
           href="https://github.com/jfkdls0620">
           GitHub ↗
         </a>
+        <ThemeToggle />
       </nav>
     </header>
 

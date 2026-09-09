@@ -11,7 +11,7 @@
   --selection: #d4e5d5;
   --mark-face: #111111;
   --mark-letter: #ffffff;
-  color-scheme: light dark;
+  color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--canvas);
@@ -19,22 +19,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
-/* 시스템 다크 모드를 따른다. 토큰만 바꾸므로 개별 규칙은 그대로 동작한다. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --canvas: #101310;
-    --surface: #191d19;
-    --ink: #e7ece6;
-    --muted: #a2aea3;
-    --accent: #82bd98;
-    --accent-soft: #1c2a21;
-    --line: #2c332c;
-    --on-ink: #101310;
-    --dot: #556056;
-    --selection: #2f4a39;
-    --mark-face: #e7ece6;
-    --mark-letter: #101310;
-  }
+/* 라이트가 기본이고, 헤더의 버튼으로 다크로 전환한다.
+   토큰만 바꾸므로 개별 규칙은 그대로 동작한다. */
+:root[data-theme="dark"] {
+  --canvas: #101310;
+  --surface: #191d19;
+  --ink: #e7ece6;
+  --muted: #a2aea3;
+  --accent: #82bd98;
+  --accent-soft: #1c2a21;
+  --line: #2c332c;
+  --on-ink: #101310;
+  --dot: #556056;
+  --selection: #2f4a39;
+  --mark-face: #e7ece6;
+  --mark-letter: #101310;
+  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
