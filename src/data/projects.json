@@ -3,17 +3,14 @@
     "id": "onbank-healthcare",
     "title": "신협 온뱅크 헬스케어 웹뷰",
     "company": "창헬스케어",
-    "period": { "start": "2026-07", "end": "2026-08" },
+    "period": {"start": "2026-07", "end": "2026-08"},
     "role": "프론트엔드 단독 개발",
     "summary": "신협 온뱅크 앱 내 헬스케어 서비스의 프론트엔드를 설계부터 배포까지 단독으로 담당했습니다.",
     "techStack": ["Docker", "Nginx", "Self-hosted runner"],
     "contributions": [
       {
         "title": "건강검진 분석 및 예약 화면",
-        "items": [
-          "간편인증 기반 건강검진 데이터 스크래핑 및 분석 리포트 구현",
-          "체형분석 및 진료·검진 예약 화면 구현"
-        ]
+        "items": ["간편인증 기반 건강검진 데이터 스크래핑 및 분석 리포트 구현", "체형분석 및 진료·검진 예약 화면 구현"]
       },
       {
         "title": "배포 환경 구축",
@@ -32,7 +29,7 @@
     "id": "chc-health-report",
     "title": "CHC 건강검진 리포트 서비스",
     "company": "창헬스케어",
-    "period": { "start": "2025-12", "end": "2026-06" },
+    "period": {"start": "2025-12", "end": "2026-06"},
     "role": "프론트엔드 개발",
     "summary": "건강검진 데이터를 분석 리포트로 제공하는 서비스를 구축하고, 리포트 UI를 여러 프로젝트에서 재사용할 수 있도록 패키지로 분리했습니다.",
     "techStack": ["Vue 3", "Vite", "Swiper", "Docker", "Nginx"],
@@ -85,23 +82,10 @@
     "id": "chc-wellness-admin",
     "title": "CHC 웰니스 관리자 웹",
     "company": "창헬스케어",
-    "period": { "start": "2025-08", "end": "2026-06" },
+    "period": {"start": "2025-08", "end": "2026-06"},
     "role": "프론트엔드 개발",
     "summary": "건강코칭 운영자를 위한 관리자 웹을 개발했습니다. 공통 UI와 상태 처리를 정리하고 콘텐츠 관리·실시간 채팅·영상 미리보기를 구현했습니다.",
-    "techStack": [
-      "Vue.js",
-      "Vuex",
-      "Vue Router",
-      "REST API",
-      "SCSS",
-      "Axios",
-      "HTML",
-      "Quill",
-      "STOMP",
-      "WebSocket",
-      "hls.js",
-      "ECharts"
-    ],
+    "techStack": ["Vue.js", "Vuex", "Vue Router", "REST API", "SCSS", "Axios", "HTML", "Quill", "STOMP", "WebSocket", "hls.js", "ECharts"],
     "contributions": [
       {
         "title": "재사용 가능한 공통 UI",
@@ -112,10 +96,7 @@
       },
       {
         "title": "공통 상태 및 화면 동작",
-        "items": [
-          "모달 스택·페이지네이션·검색 필터를 Composables로 분리",
-          "전역 로딩과 토스트 알림을 공통으로 관리하는 구조 구축"
-        ]
+        "items": ["모달 스택·페이지네이션·검색 필터를 Composables로 분리", "전역 로딩과 토스트 알림을 공통으로 관리하는 구조 구축"]
       },
       {
         "title": "CMS 및 게시물 관리",
@@ -147,23 +128,14 @@
     "id": "chc-wellness-webapp",
     "title": "CHC 웰니스 사용자 웹앱",
     "company": "창헬스케어",
-    "period": { "start": "2025-07", "end": "2026-06" },
+    "period": {"start": "2025-07", "end": "2026-06"},
     "role": "프론트엔드 개발",
     "summary": "건강기록과 검진 결과를 관리하는 하이브리드 앱의 웹 화면을 개발하고, 웹뷰와 네이티브 앱 사이의 통신을 설계했습니다.",
-    "techStack": [
-      "Vue 3",
-      "Tailwind CSS",
-      "SCSS",
-      "Pinia",
-      "Axios",
-      "App Bridge"
-    ],
+    "techStack": ["Vue 3", "Tailwind CSS", "SCSS", "Pinia", "Axios", "App Bridge"],
     "contributions": [
       {
         "title": "건강기록 관리",
-        "items": [
-          "혈압·혈당·체중과 수면·운동·식단·흡연·음주·복약 기록의 등록·조회·수정·삭제 및 차트 시각화"
-        ]
+        "items": ["혈압·혈당·체중과 수면·운동·식단·흡연·음주·복약 기록의 등록·조회·수정·삭제 및 차트 시각화"]
       },
       {
         "title": "건강설문",
@@ -174,16 +146,11 @@
       },
       {
         "title": "건강검진 분석 및 참여 이벤트",
-        "items": [
-          "스크래핑·직접 입력·사진 업로드를 통한 건강검진 데이터 입력과 리포트 생성 기능 구현",
-          "걸음수 기반 스탬프 이벤트 구현"
-        ]
+        "items": ["스크래핑·직접 입력·사진 업로드를 통한 건강검진 데이터 입력과 리포트 생성 기능 구현", "걸음수 기반 스탬프 이벤트 구현"]
       },
       {
         "title": "웹뷰·네이티브 통신",
-        "items": [
-          "인증 토큰 관리와 앱 버전 조회를 위한 WebView·Native 양방향 App Bridge 설계"
-        ]
+        "items": ["인증 토큰 관리와 앱 버전 조회를 위한 WebView·Native 양방향 App Bridge 설계"]
       }
     ],
     "outcomes": [],
@@ -195,19 +162,10 @@
     "id": "paul-bassett-webapp",
     "title": "폴바셋 F&B 서비스 웹앱",
     "company": "(주)위자드소프트",
-    "period": { "start": "2023-08", "end": "2024-07" },
+    "period": {"start": "2023-08", "end": "2024-07"},
     "role": "프론트엔드 개발",
     "summary": "폴바셋 웹앱의 상품 선택·결제·개인화 기능을 개발했습니다. 입력 검증과 설정 복원, iOS 호환성 개선을 담당했습니다.",
-    "techStack": [
-      "Vue.js",
-      "Vuex",
-      "Vue Router",
-      "REST API",
-      "SCSS",
-      "Axios",
-      "HTML",
-      "vue-lazyload"
-    ],
+    "techStack": ["Vue.js", "Vuex", "Vue Router", "REST API", "SCSS", "Axios", "HTML", "vue-lazyload"],
     "contributions": [
       {
         "title": "메인 화면 및 성능",
@@ -227,10 +185,7 @@
       },
       {
         "title": "개인화 및 이벤트",
-        "items": [
-          "알레르기 항목 저장 및 관련 성분 포함 상품 경고 표시",
-          "룰렛 프로모션 및 퀴즈 게임 구현"
-        ]
+        "items": ["알레르기 항목 저장 및 관련 성분 포함 상품 경고 표시", "룰렛 프로모션 및 퀴즈 게임 구현"]
       }
     ],
     "outcomes": [
@@ -247,7 +202,7 @@
     "id": "egg-traceability-webapp",
     "title": "계란이력관리 웹앱",
     "company": "주식회사홀세일닥터",
-    "period": { "start": null, "end": null },
+    "period": {"start": null, "end": null},
     "role": "웹앱 개발 참여",
     "summary": "계란이력관리 웹앱 개발에 참여했습니다.",
     "techStack": ["Vue.js", "React Native", "HTML", "SCSS", "CSS"],
@@ -261,7 +216,7 @@
     "id": "smart-health-up",
     "title": "건강보험공단 똑똑건강UP 앱",
     "company": "주식회사웹비즈크리에이티브",
-    "period": { "start": null, "end": null },
+    "period": {"start": null, "end": null},
     "role": "앱 퍼블리싱 참여",
     "summary": "건강보험공단 똑똑건강UP 앱 퍼블리싱에 참여했습니다.",
     "techStack": ["JavaScript", "HTML", "SCSS", "CSS", "jQuery"],
@@ -275,7 +230,7 @@
     "id": "ddp-promotion",
     "title": "DDP 프로모션 웹 페이지",
     "company": "루브",
-    "period": { "start": null, "end": null },
+    "period": {"start": null, "end": null},
     "role": "웹 퍼블리싱",
     "summary": "DDP(동대문 디자인 플라자) 프로모션 웹 페이지를 퍼블리싱했습니다.",
     "techStack": ["JavaScript", "HTML", "SCSS", "CSS", "jQuery"],

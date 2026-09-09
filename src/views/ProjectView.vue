@@ -1,31 +1,21 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import projectData from '../data/projects.json'
+import {computed, ref} from "vue"
+import projectData from "../data/projects.json"
 
-type Project = Omit<(typeof projectData)[number], 'images' | 'links'> & {
-  images: { src: string; alt: string; caption?: string }[]
-  links: { label: string; url: string }[]
+type Project = Omit<(typeof projectData)[number], "images" | "links"> & {
+  images: {src: string; alt: string; caption?: string}[]
+  links: {label: string; url: string}[]
 }
 
 const projects: Project[] = projectData
-const selectedCompany = ref('전체')
-const companies = [
-  '전체',
-  ...new Set(projects.map((project) => project.company)),
-]
+const selectedCompany = ref("전체")
+const companies = ["전체", ...new Set(projects.map((project) => project.company))]
 const visibleProjects = computed(() =>
-  projects.filter(
-    (project) =>
-      selectedCompany.value === '전체' ||
-      project.company === selectedCompany.value,
-  ),
+  projects.filter((project) => selectedCompany.value === "전체" || project.company === selectedCompany.value)
 )
-const number = (value: number) => String(value).padStart(2, '0')
-const formatDate = (value: string) => value.replace('-', '.')
-const hasDetails = (project: Project) =>
-  project.contributions.length > 0 ||
-  project.outcomes.length > 0 ||
-  project.images.length > 0
+const number = (value: number) => String(value).padStart(2, "0")
+const formatDate = (value: string) => value.replace("-", ".")
+const hasDetails = (project: Project) => project.contributions.length > 0 || project.outcomes.length > 0 || project.images.length > 0
 </script>
 
 <template>
@@ -34,33 +24,32 @@ const hasDetails = (project: Project) =>
       <p class="eyebrow">PROJECT ARCHIVE</p>
       <div class="intro-heading">
         <h1>만들고,<br />개선한 것들<span class="accent">.</span></h1>
-        <span class="project-total" aria-label="전체 프로젝트 수"
+        <span
+          class="project-total"
+          aria-label="전체 프로젝트 수"
           >{{ number(projects.length) }}<span>PROJECTS</span></span
         >
       </div>
-      <p class="description">
-        서비스의 첫 화면부터 운영을 위한 도구까지.<br />직접 만들고 개선해 온
-        프로젝트를 소개합니다.
-      </p>
+      <p class="description">서비스의 첫 화면부터 운영을 위한 도구까지.<br />직접 만들고 개선해 온 프로젝트를 소개합니다.</p>
     </header>
 
     <div class="project-toolbar">
       <div
         class="company-filters"
         role="group"
-        aria-label="소속 회사별 프로젝트 필터"
-      >
+        aria-label="소속 회사별 프로젝트 필터">
         <button
           v-for="company in companies"
           :key="company"
           type="button"
           :aria-pressed="selectedCompany === company"
-          @click="selectedCompany = company"
-        >
+          @click="selectedCompany = company">
           {{ company }}
         </button>
       </div>
-      <p class="result-count" aria-live="polite">
+      <p
+        class="result-count"
+        aria-live="polite">
         {{ number(visibleProjects.length) }}개 프로젝트
       </p>
     </div>
@@ -70,23 +59,24 @@ const hasDetails = (project: Project) =>
         v-for="project in visibleProjects"
         :key="project.id"
         class="project"
-        :aria-labelledby="`${project.id}-title`"
-      >
+        :aria-labelledby="`${project.id}-title`">
         <div class="project-meta">
-          <span class="project-number"
-            >{{ number(projects.indexOf(project) + 1) }} /</span
-          >
+          <span class="project-number">{{ number(projects.indexOf(project) + 1) }} /</span>
           <p class="company">{{ project.company }}</p>
-          <p v-if="project.period.start || project.period.end" class="period">
+          <p
+            v-if="project.period.start || project.period.end"
+            class="period">
             <time
               v-if="project.period.start"
               :datetime="project.period.start"
               >{{ formatDate(project.period.start) }}</time
             >
             <span v-if="project.period.start && project.period.end"> — </span>
-            <time v-if="project.period.end" :datetime="project.period.end">{{
-              formatDate(project.period.end)
-            }}</time>
+            <time
+              v-if="project.period.end"
+              :datetime="project.period.end"
+              >{{ formatDate(project.period.end) }}</time
+            >
           </p>
           <p class="role">{{ project.role }}</p>
         </div>
@@ -97,25 +87,36 @@ const hasDetails = (project: Project) =>
           <ul
             v-if="project.techStack.length"
             class="tech-stack"
-            aria-label="기술 스택"
-          >
-            <li v-for="tech in project.techStack" :key="tech">{{ tech }}</li>
+            aria-label="기술 스택">
+            <li
+              v-for="tech in project.techStack"
+              :key="tech">
+              {{ tech }}
+            </li>
           </ul>
-          <details v-if="hasDetails(project)" class="project-details">
+          <details
+            v-if="hasDetails(project)"
+            class="project-details">
             <summary>
-              <span class="label-closed">담당 기능과 자세한 내용</span
-              ><span class="label-open">상세 내용 접기</span
-              ><span class="toggle-icon" aria-hidden="true">+</span>
+              <span class="label-closed">담당 기능과 자세한 내용</span><span class="label-open">상세 내용 접기</span
+              ><span
+                class="toggle-icon"
+                aria-hidden="true"
+                >+</span
+              >
             </summary>
             <div class="detail-content">
-              <div v-if="project.images.length" class="project-gallery">
-                <figure v-for="image in project.images" :key="image.src">
+              <div
+                v-if="project.images.length"
+                class="project-gallery">
+                <figure
+                  v-for="image in project.images"
+                  :key="image.src">
                   <img
                     :src="image.src"
                     :alt="image.alt"
                     loading="lazy"
-                    decoding="async"
-                  />
+                    decoding="async" />
                   <figcaption v-if="image.caption">
                     {{ image.caption }}
                   </figcaption>
@@ -124,34 +125,40 @@ const hasDetails = (project: Project) =>
               <section
                 v-for="contribution in project.contributions"
                 :key="contribution.title"
-                class="contribution"
-              >
+                class="contribution">
                 <h3>{{ contribution.title }}</h3>
                 <ul>
-                  <li v-for="item in contribution.items" :key="item">
+                  <li
+                    v-for="item in contribution.items"
+                    :key="item">
                     {{ item }}
                   </li>
                 </ul>
               </section>
-              <section v-if="project.outcomes.length" class="outcomes">
+              <section
+                v-if="project.outcomes.length"
+                class="outcomes">
                 <h3>성과와 개선</h3>
                 <ul>
-                  <li v-for="outcome in project.outcomes" :key="outcome">
+                  <li
+                    v-for="outcome in project.outcomes"
+                    :key="outcome">
                     {{ outcome }}
                   </li>
                 </ul>
               </section>
             </div>
           </details>
-          <div v-if="project.links.length" class="project-links">
+          <div
+            v-if="project.links.length"
+            class="project-links">
             <a
               v-for="link in project.links"
               :key="link.url"
               :href="link.url"
               target="_blank"
               rel="noopener noreferrer"
-              >{{ link.label }} <span aria-hidden="true">↗</span
-              ><span class="sr-only"> (새 탭)</span></a
+              >{{ link.label }} <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a
             >
           </div>
         </div>
@@ -224,7 +231,7 @@ const hasDetails = (project: Project) =>
 .company-filters button:hover {
   background: var(--accent-soft);
 }
-.company-filters button[aria-pressed='true'] {
+.company-filters button[aria-pressed="true"] {
   background: var(--ink);
   border-color: var(--ink);
   color: #fff;

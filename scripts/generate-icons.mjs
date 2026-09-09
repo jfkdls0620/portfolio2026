@@ -1,17 +1,13 @@
-import { deflateSync } from 'node:zlib'
-import { readFileSync, writeFileSync } from 'node:fs'
-import { pathToFileURL } from 'node:url'
+import {deflateSync} from "node:zlib"
+import {readFileSync, writeFileSync} from "node:fs"
+import {pathToFileURL} from "node:url"
 
 // public/favicon.svg를 원본으로 삼아 같은 도형의 래스터 아이콘을 만든다.
 // 로고를 고치려면 favicon.svg만 수정하고 이 스크립트를 다시 실행한다.
 export function readOutline() {
-  const svg = readFileSync(
-    new URL('../public/favicon.svg', import.meta.url),
-    'utf8',
-  )
+  const svg = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8")
   const outline = /<path[^>]*\sd="([^"]+)"/.exec(svg)?.[1]
-  if (!outline)
-    throw new Error('favicon.svg에서 path의 d 속성을 찾지 못했습니다.')
+  if (!outline) throw new Error("favicon.svg에서 path의 d 속성을 찾지 못했습니다.")
   return outline
 }
 
@@ -22,41 +18,34 @@ export function flatten(d, steps = 48) {
   let ring = []
   let x = 0
   let y = 0
-  let command = ''
+  let command = ""
   const num = () => Number(tokens.shift())
   while (tokens.length) {
     const token = tokens.shift()
     if (/[MHVLCZ]/i.test(token)) command = token.toUpperCase()
     else tokens.unshift(token)
-    if (command === 'Z') {
+    if (command === "Z") {
       if (ring.length) rings.push(ring)
       ring = []
       continue
     }
-    if (command === 'M') {
+    if (command === "M") {
       if (ring.length) rings.push(ring)
       x = num()
       y = num()
       ring = [[x, y]]
-    } else if (command === 'H') {
+    } else if (command === "H") {
       x = num()
       ring.push([x, y])
-    } else if (command === 'V') {
+    } else if (command === "V") {
       y = num()
       ring.push([x, y])
-    } else if (command === 'L') {
+    } else if (command === "L") {
       x = num()
       y = num()
       ring.push([x, y])
-    } else if (command === 'C') {
-      const [x1, y1, x2, y2, x3, y3] = [
-        num(),
-        num(),
-        num(),
-        num(),
-        num(),
-        num(),
-      ]
+    } else if (command === "C") {
+      const [x1, y1, x2, y2, x3, y3] = [num(), num(), num(), num(), num(), num()]
       const [x0, y0] = [x, y]
       for (let i = 1; i <= steps; i++) {
         const t = i / steps
@@ -81,8 +70,7 @@ const makeInLetter = (rings) => (px, py) => {
     for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
       const [xi, yi] = ring[i]
       const [xj, yj] = ring[j]
-      if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi)
-        inside = !inside
+      if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) inside = !inside
     }
   }
   return inside
@@ -137,7 +125,7 @@ const CRC = (() => {
 function chunk(type, data) {
   const length = Buffer.alloc(4)
   length.writeUInt32BE(data.length)
-  const body = Buffer.concat([Buffer.from(type, 'ascii'), data])
+  const body = Buffer.concat([Buffer.from(type, "ascii"), data])
   const crc = Buffer.alloc(4)
   crc.writeUInt32BE(CRC(body))
   return Buffer.concat([length, body, crc])
@@ -158,9 +146,9 @@ export function png(outline, size) {
   ihdr[9] = 6 // RGBA
   return Buffer.concat([
     Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
-    chunk('IHDR', ihdr),
-    chunk('IDAT', deflateSync(raw, { level: 9 })),
-    chunk('IEND', Buffer.alloc(0)),
+    chunk("IHDR", ihdr),
+    chunk("IDAT", deflateSync(raw, {level: 9})),
+    chunk("IEND", Buffer.alloc(0)),
   ])
 }
 
@@ -185,8 +173,8 @@ function ico(outline, sizes) {
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const outline = readOutline()
-  const out = new URL('../public/', import.meta.url)
-  writeFileSync(new URL('favicon.ico', out), ico(outline, [16, 32, 48]))
-  writeFileSync(new URL('apple-touch-icon.png', out), png(outline, 180))
-  console.log('generated favicon.ico, apple-touch-icon.png')
+  const out = new URL("../public/", import.meta.url)
+  writeFileSync(new URL("favicon.ico", out), ico(outline, [16, 32, 48]))
+  writeFileSync(new URL("apple-touch-icon.png", out), png(outline, 180))
+  console.log("generated favicon.ico, apple-touch-icon.png")
 }

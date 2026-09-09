@@ -1,28 +1,42 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
-import careers from '../data/careers.json'
-import projects from '../data/projects.json'
+import {RouterLink} from "vue-router"
+import careers from "../data/careers.json"
+import projects from "../data/projects.json"
 
-const pad = (count: number) => String(count).padStart(2, '0')
+const pad = (count: number) => String(count).padStart(2, "0")
 </script>
 
 <template>
   <div class="home-page">
-    <section class="home-hero" aria-labelledby="home-title">
-      <h1 id="home-title">
-        화면을 넘어,<br /><span class="accent">경험을</span> 만듭니다.
-      </h1>
+    <section
+      class="home-hero"
+      aria-labelledby="home-title">
+      <h1 id="home-title">화면을 넘어,<br /><span class="accent">경험을</span> 만듭니다.</h1>
     </section>
-    <nav class="home-links" aria-label="포트폴리오 둘러보기">
-      <RouterLink class="home-link" to="/Career">
+    <nav
+      class="home-links"
+      aria-label="포트폴리오 둘러보기">
+      <RouterLink
+        class="home-link"
+        to="/Career">
         <span class="link-name">Career</span>
         <span class="link-count">{{ pad(careers.length) }}개 회사</span>
-        <span class="link-arrow" aria-hidden="true">↗</span>
+        <span
+          class="link-arrow"
+          aria-hidden="true"
+          >↗</span
+        >
       </RouterLink>
-      <RouterLink class="home-link" to="/Project">
+      <RouterLink
+        class="home-link"
+        to="/Project">
         <span class="link-name">Projects</span>
         <span class="link-count">{{ pad(projects.length) }}개 프로젝트</span>
-        <span class="link-arrow" aria-hidden="true">↗</span>
+        <span
+          class="link-arrow"
+          aria-hidden="true"
+          >↗</span
+        >
       </RouterLink>
     </nav>
   </div>

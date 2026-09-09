@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import careers from '../data/careers.json'
+import careers from "../data/careers.json"
 
-const formatDate = (value: string) => value.replace('-', '.')
+const formatDate = (value: string) => value.replace("-", ".")
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const formatDate = (value: string) => value.replace('-', '.')
 
     <div class="timeline-heading">
       <h2>
-        함께한 곳들 <span>{{ String(careers.length).padStart(2, '0') }}</span>
+        함께한 곳들 <span>{{ String(careers.length).padStart(2, "0") }}</span>
       </h2>
       <span>최근 경력순</span>
     </div>
@@ -27,49 +27,50 @@ const formatDate = (value: string) => value.replace('-', '.')
         v-for="career in careers"
         :key="career.id"
         class="career-entry"
-        :class="{ current: career.isCurrent }"
-      >
+        :class="{current: career.isCurrent}">
         <div class="career-period">
-          <span v-if="career.isCurrent" class="current-badge"
+          <span
+            v-if="career.isCurrent"
+            class="current-badge"
             ><span aria-hidden="true"></span>재직 중</span
           >
           <p>
-            <time :datetime="career.period.start">{{
-              formatDate(career.period.start)
-            }}</time>
+            <time :datetime="career.period.start">{{ formatDate(career.period.start) }}</time>
             <span> — </span>
             <span v-if="career.isCurrent">현재</span>
-            <time v-else-if="career.period.end" :datetime="career.period.end">{{
-              formatDate(career.period.end)
-            }}</time>
+            <time
+              v-else-if="career.period.end"
+              :datetime="career.period.end"
+              >{{ formatDate(career.period.end) }}</time
+            >
           </p>
           <span class="employment-type">{{ career.employmentType }}</span>
         </div>
         <article
           class="career-content"
-          :aria-labelledby="`${career.id}-heading`"
-        >
+          :aria-labelledby="`${career.id}-heading`">
           <p class="career-role">{{ career.role }}</p>
           <h3 :id="`${career.id}-heading`">{{ career.company }}</h3>
           <p class="career-summary">{{ career.summary }}</p>
           <ul
             v-if="career.responsibilities.length"
             class="responsibilities"
-            aria-label="주요 담당 업무"
-          >
+            aria-label="주요 담당 업무">
             <li
               v-for="responsibility in career.responsibilities"
-              :key="responsibility"
-            >
+              :key="responsibility">
               {{ responsibility }}
             </li>
           </ul>
           <ul
             v-if="career.techStack.length"
             class="tech-stack"
-            aria-label="사용 기술"
-          >
-            <li v-for="tech in career.techStack" :key="tech">{{ tech }}</li>
+            aria-label="사용 기술">
+            <li
+              v-for="tech in career.techStack"
+              :key="tech">
+              {{ tech }}
+            </li>
           </ul>
         </article>
       </li>
@@ -166,7 +167,7 @@ const formatDate = (value: string) => value.replace('-', '.')
   border-left: 1px solid var(--line);
 }
 .career-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 44px;
   left: -5px;

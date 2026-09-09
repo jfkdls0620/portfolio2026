@@ -2,7 +2,7 @@
   {
     "id": "chang-healthcare",
     "company": "창헬스케어",
-    "period": { "start": "2025-06", "end": null },
+    "period": {"start": "2025-06", "end": null},
     "isCurrent": true,
     "employmentType": "정규직",
     "role": "프론트엔드 개발",
@@ -13,23 +13,13 @@
       "건강코칭 운영을 위한 콘텐츠 관리, 실시간 채팅과 데이터 시각화 구현",
       "온뱅크 헬스케어 프론트엔드 단독 개발 및 배포 파이프라인 구성"
     ],
-    "techStack": [
-      "Vue 3",
-      "Vite",
-      "Pinia",
-      "Vuex",
-      "Tailwind CSS",
-      "SCSS",
-      "Axios",
-      "Docker",
-      "Nginx"
-    ],
+    "techStack": ["Vue 3", "Vite", "Pinia", "Vuex", "Tailwind CSS", "SCSS", "Axios", "Docker", "Nginx"],
     "sourcePages": [1, 2, 3]
   },
   {
     "id": "wizardsoft",
     "company": "(주)위자드소프트",
-    "period": { "start": "2023-08", "end": "2024-11" },
+    "period": {"start": "2023-08", "end": "2024-11"},
     "isCurrent": false,
     "employmentType": "정규직",
     "role": "프론트엔드 개발",
@@ -39,21 +29,13 @@
       "사용자 설정 복원과 실시간 유효성 검증을 통한 사용자 경험 개선",
       "이미지 지연 로딩, 상태 관리와 컴포넌트 구조 개선 및 iOS 브라우저 대응"
     ],
-    "techStack": [
-      "Vue.js",
-      "Vuex",
-      "Vue Router",
-      "REST API",
-      "SCSS",
-      "Axios",
-      "HTML"
-    ],
+    "techStack": ["Vue.js", "Vuex", "Vue Router", "REST API", "SCSS", "Axios", "HTML"],
     "sourcePages": [3]
   },
   {
     "id": "wholesale-doctor",
     "company": "주식회사홀세일닥터",
-    "period": { "start": "2020-03", "end": "2021-01" },
+    "period": {"start": "2020-03", "end": "2021-01"},
     "isCurrent": false,
     "employmentType": "정규직",
     "role": "웹앱 개발",
@@ -65,7 +47,7 @@
   {
     "id": "yongsan-house",
     "company": "용산집",
-    "period": { "start": "2019-07", "end": "2020-03" },
+    "period": {"start": "2019-07", "end": "2020-03"},
     "isCurrent": false,
     "employmentType": "정규직",
     "role": "프론트엔드 개발",
@@ -77,7 +59,7 @@
   {
     "id": "webbiz-creative",
     "company": "주식회사웹비즈크리에이티브",
-    "period": { "start": "2017-10", "end": "2019-05" },
+    "period": {"start": "2017-10", "end": "2019-05"},
     "isCurrent": false,
     "employmentType": "정규직",
     "role": "웹·앱 퍼블리싱",
@@ -89,7 +71,7 @@
   {
     "id": "louvre",
     "company": "루브",
-    "period": { "start": "2013-07", "end": "2014-10" },
+    "period": {"start": "2013-07", "end": "2014-10"},
     "isCurrent": false,
     "employmentType": "정규직",
     "role": "웹 퍼블리싱",
@@ -101,7 +83,7 @@
   {
     "id": "ewideplus",
     "company": "이와이드플러스",
-    "period": { "start": "2012-09", "end": "2013-06" },
+    "period": {"start": "2012-09", "end": "2013-06"},
     "isCurrent": false,
     "employmentType": "정규직",
     "role": "웹디자인",

@@ -6,7 +6,7 @@
   --accent: #35674b;
   --accent-soft: #edf3ed;
   --line: #dde4dc;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--canvas);
   font-synthesis: none;
@@ -130,7 +130,7 @@ main:focus {
   letter-spacing: 0.16em;
 }
 .eyebrow::before {
-  content: '';
+  content: "";
   width: 20px;
   height: 1px;
   background: currentColor;
