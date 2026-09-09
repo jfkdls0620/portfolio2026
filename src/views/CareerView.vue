@@ -2,6 +2,39 @@
 import careers from "../data/careers.json"
 
 const formatDate = (value: string) => value.replace("-", ".")
+
+const toMonth = (value: string) => {
+  const [year, month] = value.split("-").map(Number)
+  return year * 12 + (month - 1)
+}
+
+// 시작 월과 종료 월을 모두 포함해 세고, 회사 간 겹치는 달은 한 번만 센다.
+const totalMonths = (() => {
+  const now = new Date()
+  const thisMonth = now.getFullYear() * 12 + now.getMonth()
+  const ranges = careers
+    .map((career) => ({
+      from: toMonth(career.period.start),
+      to: career.period.end ? toMonth(career.period.end) : thisMonth,
+    }))
+    .sort((a, b) => a.from - b.from)
+
+  let months = 0
+  let counted = -Infinity
+  for (const range of ranges) {
+    const from = Math.max(range.from, counted + 1)
+    if (range.to >= from) months += range.to - from + 1
+    counted = Math.max(counted, range.to)
+  }
+  return months
+})()
+
+const totalPeriod = (() => {
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+  if (!years) return `${months}개월`
+  return months ? `${years}년 ${months}개월` : `${years}년`
+})()
 </script>
 
 <template>
@@ -19,7 +52,9 @@ const formatDate = (value: string) => value.replace("-", ".")
       <h2>
         함께한 곳들 <span>{{ String(careers.length).padStart(2, "0") }}</span>
       </h2>
-      <span>최근 경력순</span>
+      <span class="timeline-total"
+        >총 <strong>{{ totalPeriod }}</strong> · 최근 경력순</span
+      >
     </div>
 
     <ol class="career-timeline">
@@ -117,6 +152,10 @@ const formatDate = (value: string) => value.replace("-", ".")
 .timeline-heading > span {
   font-size: 12px;
   color: var(--muted);
+}
+.timeline-total strong {
+  color: var(--accent);
+  font-weight: 600;
 }
 .career-timeline {
   margin: 20px 0 0;
