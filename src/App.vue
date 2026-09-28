@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {onBeforeUnmount, onMounted, ref} from "vue"
 import {RouterLink, RouterView} from "vue-router"
-import BrandMark from "./components/BrandMark.vue"
 import AppIcon from "./components/AppIcon.vue"
 import ThemeToggle from "./components/ThemeToggle.vue"
 
@@ -39,7 +38,6 @@ const scrollToTop = () =>
           class="wordmark"
           to="/"
           aria-label="김동현 포트폴리오 홈">
-          <BrandMark :size="40" />
           <span class="brand-name">김동현<small>Frontend Developer</small></span>
         </RouterLink>
         <nav

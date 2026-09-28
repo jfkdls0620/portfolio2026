@@ -124,7 +124,7 @@ const totalPeriod = (() => {
   line-height: 1.2;
 }
 .accent {
-  color: var(--muted);
+  color: var(--point);
 }
 .career-intro .description {
   margin-bottom: 0;

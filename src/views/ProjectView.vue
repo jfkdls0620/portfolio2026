@@ -180,7 +180,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
   line-height: 1.18;
 }
 .accent {
-  color: var(--muted);
+  color: var(--point);
 }
 .projects-intro .description {
   margin: 0;
@@ -215,7 +215,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 }
 .company-filters button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--point);
   outline-offset: 4px;
 }
 .result-count {

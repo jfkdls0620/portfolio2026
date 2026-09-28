@@ -5,6 +5,7 @@
   --muted: #676767;
   --fill: #f0f0f0;
   --line: #dedede;
+  --point: #0574c7;
   --on-ink: #ffffff;
   --dot: #b7b7b7;
   --selection: #d6d6d6;
@@ -29,6 +30,7 @@
   --muted: #a3a3a3;
   --fill: #262626;
   --line: #303030;
+  --point: #0683df;
   --on-ink: #0d0d0d;
   --dot: #525252;
   --selection: #424242;
@@ -82,7 +84,7 @@ a:hover {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--point);
   outline-offset: 5px;
 }
 button {
@@ -130,14 +132,9 @@ button {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  gap: 12px;
 }
 .wordmark:hover {
   text-decoration: none;
-}
-.brand-mark {
-  display: block;
-  flex: none;
 }
 .brand-name {
   font-size: 1rem;
@@ -199,7 +196,7 @@ h1 {
   overflow-wrap: anywhere;
 }
 .accent {
-  color: var(--muted);
+  color: var(--point);
 }
 .description {
   max-width: 36rem;
