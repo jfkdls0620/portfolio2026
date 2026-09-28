@@ -11,6 +11,8 @@
   --selection: #d4e5d5;
   --mark-face: #111111;
   --mark-letter: #ffffff;
+  --measure: 680px;
+  --scroll-thumb: #c3ccc2;
   --header-bg: #f7f8f5d9;
   --header-shadow: #1c2b2126;
   color-scheme: light;
@@ -36,6 +38,7 @@
   --selection: #2f4a39;
   --mark-face: #e7ece6;
   --mark-letter: #101310;
+  --scroll-thumb: #3a423a;
   --header-bg: #101310d9;
   --header-shadow: #00000073;
   color-scheme: dark;
@@ -50,6 +53,29 @@ body {
 ::selection {
   background: var(--selection);
   color: var(--ink);
+}
+html {
+  caret-color: var(--accent);
+  scrollbar-color: var(--scroll-thumb) transparent;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: var(--scroll-thumb);
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+time,
+.link-count,
+.timeline-total {
+  font-variant-numeric: tabular-nums;
 }
 a {
   color: inherit;
@@ -169,27 +195,11 @@ main {
 main:focus {
   outline: none;
 }
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-}
-.eyebrow::before {
-  content: "";
-  width: 20px;
-  height: 1px;
-  background: currentColor;
-}
 h1 {
   margin: 22px 0;
   font-size: clamp(36px, 5vw, 60px);
   line-height: 1.25;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.04em;
   font-weight: 700;
   word-break: keep-all;
   overflow-wrap: anywhere;

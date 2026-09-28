@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {computed, ref} from "vue"
+import AppIcon from "../components/AppIcon.vue"
 import projectData from "../data/projects.json"
 
 type Project = Omit<(typeof projectData)[number], "images" | "links"> & {
@@ -21,14 +22,8 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 <template>
   <div class="projects-page">
     <header class="projects-intro">
-      <p class="eyebrow">PROJECT ARCHIVE</p>
       <div class="intro-heading">
         <h1>만들고,<br />개선한 것들<span class="accent">.</span></h1>
-        <span
-          class="project-total"
-          aria-label="전체 프로젝트 수"
-          >{{ number(projects.length) }}<span>PROJECTS</span></span
-        >
       </div>
       <p class="description">서비스의 첫 화면부터 운영을 위한 도구까지.<br />직접 만들고 개선해 온 프로젝트를 소개합니다.</p>
     </header>
@@ -61,7 +56,6 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
         class="project"
         :aria-labelledby="`${project.id}-title`">
         <div class="project-meta">
-          <span class="project-number">{{ number(projects.indexOf(project) + 1) }} /</span>
           <p class="company">{{ project.company }}</p>
           <p
             v-if="project.period.start || project.period.end"
@@ -158,7 +152,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
               :href="link.url"
               target="_blank"
               rel="noopener noreferrer"
-              >{{ link.label }} <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a
+              >{{ link.label }} <AppIcon name="arrow-up-right" /><span class="sr-only"> (새 탭)</span></a
             >
           </div>
         </div>
@@ -187,23 +181,6 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 }
 .accent {
   color: var(--accent);
-}
-.project-total {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-bottom: 30px;
-  font-size: 64px;
-  line-height: 1;
-  font-weight: 300;
-  letter-spacing: -0.06em;
-  color: var(--accent);
-}
-.project-total span {
-  margin-top: 12px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
 }
 .projects-intro .description {
   margin: 0;
@@ -261,13 +238,6 @@ summary:focus-visible {
 }
 .project-meta {
   font-size: 0.8125rem;
-}
-.project-number {
-  display: block;
-  margin-bottom: 24px;
-  font-size: 1.25rem;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
 }
 .company {
   margin: 0 0 10px;
@@ -371,6 +341,7 @@ h3 {
 .detail-content ul {
   margin: 0;
   padding-left: 18px;
+  max-width: var(--measure);
   color: var(--muted);
   font-size: 0.9375rem;
   line-height: 1.9;
@@ -437,7 +408,6 @@ figcaption {
     align-items: baseline;
     gap: 8px 12px;
   }
-  .project-number,
   .company,
   .period,
   .role {
@@ -449,9 +419,6 @@ figcaption {
   .projects-intro {
     padding-bottom: 36px;
   }
-  .project-total {
-    font-size: 44px;
-  }
   .outcomes {
     padding: 20px;
   }
@@ -462,9 +429,6 @@ figcaption {
   }
   .intro-heading h1 {
     font-size: 38px;
-  }
-  .project-total {
-    font-size: 32px;
   }
   .company-filters button {
     padding: 10px 12px;

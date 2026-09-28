@@ -40,7 +40,6 @@ const totalPeriod = (() => {
 <template>
   <div class="career-page">
     <header class="career-intro">
-      <p class="eyebrow">CAREER JOURNEY</p>
       <h1>경험을 쌓고,<br />영역을 넓히며<span class="accent">.</span></h1>
       <p class="description">
         웹디자인과 퍼블리싱에서 프론트엔드 개발까지.<br />
@@ -245,6 +244,7 @@ h3 {
 }
 .responsibilities {
   margin: 0 0 24px;
+  max-width: var(--measure);
   padding-left: 18px;
   color: var(--muted);
   font-size: 0.9375rem;

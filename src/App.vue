@@ -2,6 +2,7 @@
 import {onBeforeUnmount, onMounted, ref} from "vue"
 import {RouterLink, RouterView} from "vue-router"
 import BrandMark from "./components/BrandMark.vue"
+import AppIcon from "./components/AppIcon.vue"
 import ThemeToggle from "./components/ThemeToggle.vue"
 
 const year = new Date().getFullYear()
@@ -57,7 +58,7 @@ const scrollToTop = () =>
           <a
             class="nav-link github-link"
             href="https://github.com/jfkdls0620">
-            GitHub ↗
+            GitHub <AppIcon name="arrow-up-right" />
           </a>
           <ThemeToggle />
         </nav>
@@ -80,15 +81,15 @@ const scrollToTop = () =>
           ><a
             class="footer-github"
             href="https://github.com/jfkdls0620"
-            >GitHub <span aria-hidden="true">↗</span></a
-          >
+            >GitHub <AppIcon name="arrow-up-right"
+          /></a>
         </div>
         <div class="footer-bottom">
           <span>© {{ year }} Kim Donghyeon</span
           ><button
             type="button"
             @click="scrollToTop">
-            맨 위로 <span aria-hidden="true">↑</span>
+            맨 위로 <AppIcon name="arrow-up" />
           </button>
         </div>
       </footer>

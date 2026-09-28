@@ -47,7 +47,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
   margin: 0;
   font-size: clamp(40px, 6vw, 78px);
   line-height: 1.24;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
 }
 .home-links {
   display: flex;
