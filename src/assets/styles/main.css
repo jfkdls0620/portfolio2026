@@ -1,18 +1,17 @@
 :root {
-  --canvas: #f9fbfa;
+  --canvas: #fafafa;
   --surface: #ffffff;
-  --ink: #19201c;
-  --muted: #626a65;
-  --accent: #1e7c50;
-  --accent-soft: #dff7e8;
-  --line: #dbdfdc;
+  --ink: #171717;
+  --muted: #676767;
+  --fill: #f0f0f0;
+  --line: #dedede;
   --on-ink: #ffffff;
-  --dot: #b0bab4;
-  --selection: #b8edcd;
+  --dot: #b7b7b7;
+  --selection: #d6d6d6;
   --measure: 680px;
-  --scroll-thumb: #c0c6c2;
-  --header-bg: #f9fbfad9;
-  --header-shadow: #19201c26;
+  --scroll-thumb: #c4c4c4;
+  --header-bg: #fafafad9;
+  --header-shadow: #17171726;
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -24,18 +23,17 @@
 /* 라이트가 기본이고, 헤더의 버튼으로 다크로 전환한다.
    토큰만 바꾸므로 개별 규칙은 그대로 동작한다. */
 :root[data-theme="dark"] {
-  --canvas: #0d120f;
-  --surface: #171e19;
-  --ink: #e9eeeb;
-  --muted: #9daaa2;
-  --accent: #5fd598;
-  --accent-soft: #193023;
-  --line: #2c342f;
-  --on-ink: #0d120f;
-  --dot: #4d5550;
-  --selection: #215339;
-  --scroll-thumb: #3e4440;
-  --header-bg: #0d120fd9;
+  --canvas: #0d0d0d;
+  --surface: #181818;
+  --ink: #ededed;
+  --muted: #a3a3a3;
+  --fill: #262626;
+  --line: #303030;
+  --on-ink: #0d0d0d;
+  --dot: #525252;
+  --selection: #424242;
+  --scroll-thumb: #424242;
+  --header-bg: #0d0d0dd9;
   --header-shadow: #00000073;
   color-scheme: dark;
 }
@@ -51,7 +49,7 @@ body {
   color: var(--ink);
 }
 html {
-  caret-color: var(--accent);
+  caret-color: var(--ink);
   scrollbar-color: var(--scroll-thumb) transparent;
   scrollbar-width: thin;
 }
@@ -84,7 +82,7 @@ a:hover {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 5px;
 }
 button {
@@ -169,13 +167,13 @@ button {
   font-size: 0.875rem;
 }
 .nav-link:hover {
-  background: var(--accent-soft);
+  background: var(--fill);
   color: var(--ink);
   text-decoration: none;
 }
 .nav-link.router-link-active {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--fill);
+  color: var(--ink);
   font-weight: 600;
 }
 .github-link {
@@ -201,7 +199,7 @@ h1 {
   overflow-wrap: anywhere;
 }
 .accent {
-  color: var(--accent);
+  color: var(--muted);
 }
 .description {
   max-width: 36rem;
@@ -263,7 +261,7 @@ h1 {
   margin-left: 12px;
 }
 .footer-bottom button:hover {
-  color: var(--accent);
+  color: var(--ink);
 }
 .skip-link {
   position: fixed;

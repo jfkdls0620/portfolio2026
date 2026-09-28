@@ -86,7 +86,7 @@ const toggle = () => apply(theme.value === "dark" ? "light" : "dark")
   cursor: pointer;
 }
 .theme-toggle:hover {
-  background: var(--accent-soft);
+  background: var(--fill);
   color: var(--ink);
 }
 </style>

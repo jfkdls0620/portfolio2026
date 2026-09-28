@@ -124,7 +124,7 @@ const totalPeriod = (() => {
   line-height: 1.2;
 }
 .accent {
-  color: var(--accent);
+  color: var(--muted);
 }
 .career-intro .description {
   margin-bottom: 0;
@@ -145,7 +145,7 @@ const totalPeriod = (() => {
 }
 .timeline-heading h2 span {
   margin-left: 8px;
-  color: var(--accent);
+  color: var(--muted);
   font-size: 0.8125rem;
 }
 .timeline-heading > span {
@@ -153,7 +153,7 @@ const totalPeriod = (() => {
   color: var(--muted);
 }
 .timeline-total strong {
-  color: var(--accent);
+  color: var(--ink);
   font-weight: 600;
 }
 .career-timeline {
@@ -187,9 +187,9 @@ const totalPeriod = (() => {
   gap: 7px;
   padding: 6px 10px;
   margin-bottom: 16px;
-  background: var(--accent-soft);
+  background: var(--fill);
   border-radius: 20px;
-  color: var(--accent);
+  color: var(--ink);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -197,7 +197,7 @@ const totalPeriod = (() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--ink);
 }
 .career-content {
   position: relative;
@@ -216,14 +216,14 @@ const totalPeriod = (() => {
   outline: 6px solid var(--surface);
 }
 .current .career-content::before {
-  background: var(--accent);
+  background: var(--ink);
 }
 .career-entry + .career-entry .career-content {
   border-top: 1px solid var(--line);
 }
 .career-role {
   margin: 0 0 10px;
-  color: var(--accent);
+  color: var(--muted);
   font-size: 0.8125rem;
 }
 h3 {
@@ -255,7 +255,7 @@ h3 {
   margin-top: 8px;
 }
 .responsibilities li::marker {
-  color: var(--accent);
+  color: var(--muted);
 }
 .tech-stack {
   display: flex;
@@ -268,8 +268,8 @@ h3 {
 .tech-stack li {
   padding: 6px 10px;
   border-radius: 5px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--fill);
+  color: var(--ink);
   font-size: 0.8125rem;
   line-height: 1.4;
 }

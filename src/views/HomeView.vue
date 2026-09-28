@@ -73,7 +73,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
   letter-spacing: -0.035em;
 }
 .home-link:hover .link-name {
-  color: var(--accent);
+  color: var(--ink);
 }
 .link-count {
   color: var(--muted);
@@ -85,7 +85,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
   color: var(--muted);
 }
 .home-link:hover .link-arrow {
-  color: var(--accent);
+  color: var(--ink);
 }
 @media (max-width: 700px) {
   .home-hero {

@@ -180,7 +180,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
   line-height: 1.18;
 }
 .accent {
-  color: var(--accent);
+  color: var(--muted);
 }
 .projects-intro .description {
   margin: 0;
@@ -206,7 +206,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
   cursor: pointer;
 }
 .company-filters button:hover {
-  background: var(--accent-soft);
+  background: var(--fill);
 }
 .company-filters button[aria-pressed="true"] {
   background: var(--ink);
@@ -215,7 +215,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 }
 .company-filters button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 4px;
 }
 .result-count {
@@ -282,8 +282,8 @@ h2 {
 .tech-stack li {
   padding: 6px 10px;
   border-radius: 5px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--fill);
+  color: var(--ink);
   font-size: 0.8125rem;
   line-height: 1.4;
 }
@@ -307,7 +307,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 summary:hover {
-  color: var(--accent);
+  color: var(--ink);
 }
 .toggle-icon {
   font-size: 1.4375rem;
@@ -351,13 +351,13 @@ h3 {
   margin-top: 6px;
 }
 .detail-content li::marker {
-  color: var(--accent);
+  color: var(--muted);
 }
 .outcomes {
   margin-top: 28px;
   padding: 24px;
   border-radius: 8px;
-  background: var(--accent-soft);
+  background: var(--fill);
 }
 .project-gallery {
   display: grid;

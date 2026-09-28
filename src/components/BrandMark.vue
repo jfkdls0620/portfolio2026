@@ -19,7 +19,7 @@ withDefaults(defineProps<{size?: number}>(), {size: 40})
       width="64"
       height="64"
       rx="16"
-      fill="#158353" />
+      fill="#171717" />
     <path
       d="M20 45 V19 H28 C36.5 19 44 24.5 44 32 C44 39.5 36.5 45 28 45 Z"
       fill="none"
