@@ -7,6 +7,28 @@
   --line: #dedede;
   --point: #0574c7;
   --on-ink: #ffffff;
+
+  /* 역할 이름으로 부른다. 값이 아니라 쓰임이 바뀔 때 고치기 위해서다. */
+  --text-hero: clamp(2.5rem, 6vw, 4.875rem);
+  --text-display: clamp(2.25rem, 4.8vw, 3.5rem);
+  --text-title: clamp(1.375rem, 2.3vw, 1.75rem);
+  --text-section: 1.125rem;
+  --text-body: 1rem;
+  --text-label: 0.875rem;
+  --text-micro: 0.75rem;
+
+  --leading-prose: 1.85;
+
+  /* 4단위 기반 간격. 임의값 대신 이 단계만 쓴다. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 88px;
   --dot: #b7b7b7;
   --selection: #d6d6d6;
   --measure: 680px;
@@ -38,6 +60,11 @@
   --header-bg: #0d0d0dd9;
   --header-shadow: #00000073;
   color-scheme: dark;
+  /* 어두운 배경의 밝은 글자는 더 조밀해 보인다. 행간과 자간으로 보정한다. */
+  --leading-prose: 1.9;
+}
+:root[data-theme="dark"] body {
+  letter-spacing: 0.005em;
 }
 * {
   box-sizing: border-box;
@@ -137,15 +164,15 @@ button {
   text-decoration: none;
 }
 .brand-name {
-  font-size: 1rem;
-  font-weight: 650;
+  font-size: var(--text-body);
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 .brand-name small {
   display: block;
   margin-top: 4px;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: var(--text-micro);
   letter-spacing: 0.01em;
   font-weight: 400;
 }
@@ -161,7 +188,7 @@ button {
   padding: 0 16px;
   border-radius: 8px;
   color: var(--muted);
-  font-size: 0.875rem;
+  font-size: var(--text-label);
 }
 .nav-link:hover {
   background: var(--fill);
@@ -181,14 +208,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 68px 0 88px;
+  padding: 64px 0 88px;
 }
 main:focus {
   outline: none;
 }
 h1 {
-  margin: 22px 0;
-  font-size: clamp(36px, 5vw, 60px);
+  margin: 24px 0;
+  font-size: var(--text-display);
   line-height: 1.25;
   letter-spacing: -0.04em;
   font-weight: 700;
@@ -201,8 +228,8 @@ h1 {
 .description {
   max-width: 36rem;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.9;
+  font-size: var(--text-body);
+  line-height: var(--leading-prose);
   word-break: keep-all;
 }
 .site-footer {
@@ -217,14 +244,14 @@ h1 {
   gap: 20px;
 }
 .footer-name {
-  font-size: 1.0625rem;
+  font-size: var(--text-section);
   font-weight: 600;
 }
 .footer-name span {
   display: block;
-  margin-top: 10px;
+  margin-top: 12px;
   font-weight: 400;
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
   color: var(--muted);
   line-height: 1.8;
 }
@@ -236,13 +263,13 @@ h1 {
   gap: 24px;
   align-items: center;
   min-height: 44px;
-  font-size: 0.875rem;
+  font-size: var(--text-label);
 }
 .footer-bottom {
   margin-top: 32px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
-  font-size: 0.75rem;
+  font-size: var(--text-micro);
   color: var(--muted);
 }
 .footer-bottom button {
@@ -252,7 +279,7 @@ h1 {
   min-height: 44px;
   padding: 0 4px 0 12px;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: var(--text-micro);
 }
 .footer-bottom button span {
   margin-left: 12px;
@@ -267,7 +294,7 @@ h1 {
   z-index: 10;
   background: var(--ink);
   color: var(--on-ink);
-  padding: 14px 20px;
+  padding: 16px 20px;
   border-radius: 8px;
 }
 .skip-link:focus {
@@ -275,18 +302,18 @@ h1 {
 }
 @media (max-width: 700px) {
   .page {
-    padding: 0 22px;
+    padding: 0 24px;
   }
   .header-inner {
     flex-wrap: wrap;
     min-height: 90px;
-    padding: 20px 22px;
+    padding: 20px 24px;
     gap: 20px;
   }
   main {
     padding: 44px 0 56px;
     /* 고정 헤더에 가려지지 않도록 본문 이동 지점에 여백을 준다. */
-    scroll-margin-top: 100px;
+    scroll-margin-top: 88px;
   }
   .nav-link {
     padding: 0 12px;

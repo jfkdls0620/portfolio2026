@@ -45,7 +45,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
 }
 .home-hero h1 {
   margin: 0;
-  font-size: clamp(40px, 6vw, 78px);
+  font-size: var(--text-hero);
   line-height: 1.24;
   letter-spacing: -0.04em;
 }
@@ -58,7 +58,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
   display: flex;
   align-items: baseline;
   gap: 20px;
-  padding: 34px 4px;
+  padding: 32px 4px;
   border-bottom: 1px solid var(--line);
   transition: padding-left 200ms;
 }
@@ -68,7 +68,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
 }
 .link-name {
   flex: 1;
-  font-size: clamp(26px, 3.4vw, 38px);
+  font-size: var(--text-display);
   font-weight: 600;
   letter-spacing: -0.035em;
 }
@@ -77,15 +77,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
 }
 .link-count {
   color: var(--muted);
-  font-size: 0.875rem;
-}
-.link-arrow {
-  align-self: center;
-  font-size: 1.25rem;
-  color: var(--muted);
-}
-.home-link:hover .link-arrow {
-  color: var(--ink);
+  font-size: var(--text-label);
 }
 @media (max-width: 700px) {
   .home-hero {
@@ -93,7 +85,7 @@ const pad = (count: number) => String(count).padStart(2, "0")
     padding: 12px 0 64px;
   }
   .home-link {
-    padding: 26px 2px;
+    padding: 24px 4px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

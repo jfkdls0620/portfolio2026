@@ -120,7 +120,7 @@ const totalPeriod = (() => {
   padding-bottom: 44px;
 }
 .career-intro h1 {
-  font-size: clamp(36px, 4.8vw, 56px);
+  font-size: var(--text-display);
   line-height: 1.2;
 }
 .accent {
@@ -134,22 +134,22 @@ const totalPeriod = (() => {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding: 22px 0;
+  padding: 24px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .timeline-heading h2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--text-section);
   font-weight: 600;
 }
 .timeline-heading h2 span {
   margin-left: 8px;
   color: var(--muted);
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
 }
 .timeline-heading > span {
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
   color: var(--muted);
 }
 .timeline-total strong {
@@ -171,10 +171,10 @@ const totalPeriod = (() => {
 }
 .career-period {
   padding: 40px 0;
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
 }
 .career-period p {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-variant-numeric: tabular-nums;
   line-height: 1.8;
 }
@@ -184,13 +184,13 @@ const totalPeriod = (() => {
 .current-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 10px;
+  gap: 8px;
+  padding: 8px 12px;
   margin-bottom: 16px;
   background: var(--fill);
   border-radius: 20px;
   color: var(--ink);
-  font-size: 0.75rem;
+  font-size: var(--text-micro);
   font-weight: 600;
 }
 .current-badge span {
@@ -222,13 +222,13 @@ const totalPeriod = (() => {
   border-top: 1px solid var(--line);
 }
 .career-role {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: var(--muted);
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
 }
 h3 {
   margin: 0;
-  font-size: clamp(21px, 2.3vw, 26px);
+  font-size: var(--text-title);
   line-height: 1.4;
   letter-spacing: -0.04em;
   word-break: keep-all;
@@ -237,18 +237,18 @@ h3 {
 .career-summary {
   margin: 16px 0 20px;
   color: var(--muted);
-  line-height: 1.85;
-  font-size: 1rem;
+  line-height: var(--leading-prose);
+  font-size: var(--text-body);
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 .responsibilities {
   margin: 0 0 24px;
   max-width: var(--measure);
-  padding-left: 18px;
+  padding-left: 16px;
   color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.85;
+  font-size: var(--text-body);
+  line-height: var(--leading-prose);
   overflow-wrap: anywhere;
 }
 .responsibilities li + li {
@@ -260,17 +260,17 @@ h3 {
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .tech-stack li {
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 5px;
   background: var(--fill);
   color: var(--ink);
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
   line-height: 1.4;
 }
 @media (max-width: 700px) {

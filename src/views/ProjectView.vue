@@ -176,7 +176,7 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
 }
 .intro-heading h1 {
   margin: 16px 0 24px;
-  font-size: clamp(36px, 4.8vw, 56px);
+  font-size: var(--text-display);
   line-height: 1.18;
 }
 .accent {
@@ -199,10 +199,10 @@ const hasDetails = (project: Project) => project.contributions.length > 0 || pro
   border-radius: 24px;
   background: transparent;
   color: var(--muted);
-  padding: 10px 15px;
+  padding: 12px 16px;
   min-height: 44px;
   font: inherit;
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
   cursor: pointer;
 }
 .company-filters button:hover {
@@ -220,7 +220,7 @@ summary:focus-visible {
 }
 .result-count {
   margin: 20px 0 0;
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
   color: var(--muted);
 }
 .project {
@@ -237,16 +237,16 @@ summary:focus-visible {
   gap: 16px;
 }
 .project-meta {
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
 }
 .company {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-weight: 600;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 .period {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
@@ -257,7 +257,7 @@ summary:focus-visible {
 }
 h2 {
   margin: 0;
-  font-size: clamp(21px, 2.3vw, 26px);
+  font-size: var(--text-title);
   letter-spacing: -0.04em;
   line-height: 1.4;
   word-break: keep-all;
@@ -265,26 +265,26 @@ h2 {
 }
 .project-summary {
   margin: 16px 0 20px;
-  font-size: 1rem;
+  font-size: var(--text-body);
   color: var(--muted);
-  line-height: 1.85;
+  line-height: var(--leading-prose);
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .tech-stack li {
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 5px;
   background: var(--fill);
   color: var(--ink);
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
   line-height: 1.4;
 }
 .project-details {
@@ -299,7 +299,7 @@ summary {
   padding: 12px 0;
   border-top: 1px solid var(--line);
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: var(--text-label);
   font-weight: 600;
   list-style: none;
 }
@@ -310,7 +310,7 @@ summary:hover {
   color: var(--ink);
 }
 .toggle-icon {
-  font-size: 1.4375rem;
+  font-size: var(--text-title);
   font-weight: 400;
 }
 .label-open {
@@ -334,21 +334,21 @@ details[open] .toggle-icon {
   margin-top: 28px;
 }
 h3 {
-  margin: 0 0 10px;
-  font-size: 1rem;
+  margin: 0 0 12px;
+  font-size: var(--text-section);
   line-height: 1.5;
 }
 .detail-content ul {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 16px;
   max-width: var(--measure);
   color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.9;
+  font-size: var(--text-body);
+  line-height: var(--leading-prose);
   overflow-wrap: anywhere;
 }
 .detail-content li + li {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .detail-content li::marker {
   color: var(--muted);
@@ -376,14 +376,14 @@ figure img {
 figcaption {
   margin-top: 8px;
   color: var(--muted);
-  font-size: 0.8125rem;
+  font-size: var(--text-label);
 }
 .project-links {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-  font-size: 0.875rem;
+  font-size: var(--text-label);
 }
 .project-links a {
   padding: 12px 0;
@@ -427,11 +427,8 @@ figcaption {
   .intro-heading {
     gap: 8px;
   }
-  .intro-heading h1 {
-    font-size: 38px;
-  }
   .company-filters button {
-    padding: 10px 12px;
+    padding: 12px 12px;
   }
 }
 </style>
