@@ -18,7 +18,9 @@ const apply = (next: Theme) => {
   else delete root.dataset.theme
 
   // 모바일 브라우저 주소창 색을 현재 테마에 맞춘다.
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", next === "dark" ? "#101310" : "#f7f8f5")
+  // 값을 복제하지 않도록 적용된 --canvas를 그대로 읽는다.
+  const canvas = getComputedStyle(root).getPropertyValue("--canvas").trim()
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", canvas)
 
   try {
     localStorage.setItem(STORAGE_KEY, next)

@@ -1,20 +1,20 @@
 :root {
-  --canvas: #f7f8f5;
+  --canvas: #f9fbfa;
   --surface: #ffffff;
-  --ink: #24332b;
-  --muted: #5b675f;
-  --accent: #35674b;
-  --accent-soft: #edf3ed;
-  --line: #dde4dc;
+  --ink: #19201c;
+  --muted: #626a65;
+  --accent: #1e7c50;
+  --accent-soft: #dff7e8;
+  --line: #dbdfdc;
   --on-ink: #ffffff;
-  --dot: #a4ad98;
-  --selection: #d4e5d5;
+  --dot: #b0bab4;
+  --selection: #b8edcd;
   --mark-face: #111111;
   --mark-letter: #ffffff;
   --measure: 680px;
-  --scroll-thumb: #c3ccc2;
-  --header-bg: #f7f8f5d9;
-  --header-shadow: #1c2b2126;
+  --scroll-thumb: #c0c6c2;
+  --header-bg: #f9fbfad9;
+  --header-shadow: #19201c26;
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -26,20 +26,20 @@
 /* 라이트가 기본이고, 헤더의 버튼으로 다크로 전환한다.
    토큰만 바꾸므로 개별 규칙은 그대로 동작한다. */
 :root[data-theme="dark"] {
-  --canvas: #101310;
-  --surface: #191d19;
-  --ink: #e7ece6;
-  --muted: #a2aea3;
-  --accent: #82bd98;
-  --accent-soft: #1c2a21;
-  --line: #2c332c;
-  --on-ink: #101310;
-  --dot: #556056;
-  --selection: #2f4a39;
-  --mark-face: #e7ece6;
-  --mark-letter: #101310;
-  --scroll-thumb: #3a423a;
-  --header-bg: #101310d9;
+  --canvas: #0d120f;
+  --surface: #171e19;
+  --ink: #e9eeeb;
+  --muted: #9daaa2;
+  --accent: #5fd598;
+  --accent-soft: #193023;
+  --line: #2c342f;
+  --on-ink: #0d120f;
+  --dot: #4d5550;
+  --selection: #215339;
+  --mark-face: #e9eeeb;
+  --mark-letter: #0d120f;
+  --scroll-thumb: #3e4440;
+  --header-bg: #0d120fd9;
   --header-shadow: #00000073;
   color-scheme: dark;
 }
