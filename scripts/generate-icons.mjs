@@ -15,10 +15,18 @@ const hexToRgb = (hex) =>
 export function readMark() {
   const svg = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8")
   const outline = /<path[^>]*\sd="([^"]+)"/.exec(svg)?.[1]
-  const face = /<circle[^>]*fill="(#[0-9a-fA-F]{6})"/.exec(svg)?.[1]
-  const letter = /<path[^>]*fill="(#[0-9a-fA-F]{6})"/.exec(svg)?.[1]
-  if (!outline || !face || !letter) throw new Error("favicon.svg에서 도형이나 색을 찾지 못했습니다.")
-  return {outline, face: hexToRgb(face), letter: hexToRgb(letter)}
+  const face = /<rect[^>]*fill="(#[0-9a-fA-F]{6})"/.exec(svg)?.[1]
+  const radius = /<rect[^>]*rx="([\d.]+)"/.exec(svg)?.[1]
+  const letter = /<path[^>]*stroke="(#[0-9a-fA-F]{6})"/.exec(svg)?.[1]
+  const width = /<path[^>]*stroke-width="([\d.]+)"/.exec(svg)?.[1]
+  if (!outline || !face || !letter || !radius || !width) throw new Error("favicon.svg에서 도형이나 색을 찾지 못했습니다.")
+  return {
+    outline,
+    face: hexToRgb(face),
+    letter: hexToRgb(letter),
+    radius: Number(radius),
+    strokeWidth: Number(width),
+  }
 }
 
 // M/H/V/L/C/Z만 쓰는 절대 좌표 경로를 폴리곤 목록으로 편다.
@@ -35,7 +43,12 @@ export function flatten(d, steps = 48) {
     if (/[MHVLCZ]/i.test(token)) command = token.toUpperCase()
     else tokens.unshift(token)
     if (command === "Z") {
-      if (ring.length) rings.push(ring)
+      // 시작점으로 돌아오는 선분을 명시적으로 넣는다.
+      // 선으로 그릴 때 이 구간(예: D의 아랫변)이 실제로 그려져야 한다.
+      if (ring.length) {
+        ring.push([...ring[0]])
+        rings.push(ring)
+      }
       ring = []
       continue
     }
@@ -73,26 +86,44 @@ export function flatten(d, steps = 48) {
   return rings
 }
 
-// even-odd 규칙으로 글자 내부를 판정한다.
-const makeInLetter = (rings) => (px, py) => {
-  let inside = false
-  for (const ring of rings) {
-    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-      const [xi, yi] = ring[i]
-      const [xj, yj] = ring[j]
-      if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) inside = !inside
-    }
-  }
-  return inside
+// 둥근 사각형 배경. 모서리 영역에서는 모서리 중심까지의 거리로 판정한다.
+const makeInFace = (r) => (x, y) => {
+  if (x < 0 || x > 64 || y < 0 || y > 64) return false
+  const cx = Math.min(Math.max(x, r), 64 - r)
+  const cy = Math.min(Math.max(y, r), 64 - r)
+  const dx = x - cx
+  const dy = y - cy
+  return dx * dx + dy * dy <= r * r
 }
-const inCircle = (px, py) => (px - 32) ** 2 + (py - 32) ** 2 <= 32 ** 2
+
+// 선으로 그린 글자는 경로까지의 거리로 판정한다.
+// 둥근 캡과 둥근 연결부가 거리 판정에서 그대로 나온다.
+const makeOnStroke = (rings, width) => {
+  const half = width / 2
+  return (x, y) => {
+    for (const ring of rings)
+      for (let i = 1; i < ring.length; i++) {
+        const [x1, y1] = ring[i - 1]
+        const [x2, y2] = ring[i]
+        const vx = x2 - x1
+        const vy = y2 - y1
+        const len2 = vx * vx + vy * vy
+        const t = len2 ? Math.min(1, Math.max(0, ((x - x1) * vx + (y - y1) * vy) / len2)) : 0
+        const dx = x - (x1 + t * vx)
+        const dy = y - (y1 + t * vy)
+        if (dx * dx + dy * dy <= half * half) return true
+      }
+    return false
+  }
+}
 
 const SS = 6 // 픽셀당 6x6 슈퍼샘플링으로 곡선의 계단 현상을 줄인다.
 
 function render(mark, size) {
-  const {outline, face, letter} = mark
+  const {outline, face, letter, radius, strokeWidth} = mark
   const rings = flatten(outline)
-  const inLetter = makeInLetter(rings)
+  const inLetter = makeOnStroke(rings, strokeWidth)
+  const inFace = makeInFace(radius)
   const data = Buffer.alloc(size * size * 4)
   const unit = 64 / size
   for (let py = 0; py < size; py++) {
@@ -103,7 +134,7 @@ function render(mark, size) {
         for (let sx = 0; sx < SS; sx++) {
           const x = (px + (sx + 0.5) / SS) * unit
           const y = (py + (sy + 0.5) / SS) * unit
-          if (!inCircle(x, y)) continue
+          if (!inFace(x, y)) continue
           disc++
           if (inLetter(x, y)) hit++
         }
@@ -182,7 +213,9 @@ function ico(mark, sizes) {
   return Buffer.concat([header, ...images])
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+// 이 파일을 직접 실행했을 때만 아이콘을 만든다.
+// argv[1]이 없는 환경에서도 모듈로 불러올 수 있어야 한다.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const mark = readMark()
   const out = new URL("../public/", import.meta.url)
   writeFileSync(new URL("favicon.ico", out), ico(mark, [16, 32, 48]))

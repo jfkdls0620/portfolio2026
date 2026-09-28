@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="D">
-  <circle cx="32" cy="32" r="32" fill="#158353" />
-  <path fill="#ffffff" fill-rule="evenodd" d="M18.1 14.9 H28.9 C39.25 14.9 47.35 22.1 47.35 32 C47.35 41.9 39.25 49.1 28.9 49.1 H18.1 Z M26.1 19.9 H28.6 C35.2 19.9 40.85 25.3 40.85 32 C40.85 38.7 35.2 44.1 28.6 44.1 H26.1 Z" />
+  <rect width="64" height="64" rx="16" fill="#158353" />
+  <path
+    d="M20 45 V19 H28 C36.5 19 44 24.5 44 32 C44 39.5 36.5 45 28 45 Z"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
 </svg>
