@@ -361,6 +361,7 @@ h3 {
 }
 .project-gallery {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 240px));
   gap: 20px;
   margin-bottom: 28px;
 }
@@ -421,6 +422,24 @@ figcaption {
   }
   .outcomes {
     padding: 20px;
+  }
+  .project-gallery {
+    display: flex;
+    gap: 12px;
+    margin-inline: -24px;
+    padding-inline: 24px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    scrollbar-width: none;
+  }
+  .project-gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .project-gallery figure {
+    flex: 0 0 64%;
+    scroll-snap-align: start;
   }
 }
 @media (max-width: 380px) {
