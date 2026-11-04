@@ -389,14 +389,6 @@ figcaption {
 .project-links a {
   padding: 12px 0;
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
 @media (max-width: 700px) {
   .project {
     grid-template-columns: 1fr;

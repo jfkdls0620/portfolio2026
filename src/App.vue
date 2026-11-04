@@ -55,8 +55,10 @@ const scrollToTop = () =>
           </RouterLink>
           <a
             class="nav-link github-link"
-            href="https://github.com/jfkdls0620">
-            GitHub <AppIcon name="arrow-up-right" />
+            href="https://github.com/jfkdls0620"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub <AppIcon name="arrow-up-right" /><span class="sr-only"> (새 탭)</span>
           </a>
           <ThemeToggle />
         </nav>
@@ -79,8 +81,10 @@ const scrollToTop = () =>
           ><a
             class="footer-github"
             href="https://github.com/jfkdls0620"
-            >GitHub <AppIcon name="arrow-up-right"
-          /></a>
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <AppIcon name="arrow-up-right" /><span class="sr-only"> (새 탭)</span></a
+          >
         </div>
         <div class="footer-bottom">
           <span>© {{ year }} Kim Donghyeon</span
