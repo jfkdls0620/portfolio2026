@@ -32,12 +32,12 @@
     "period": {"start": "2025-12", "end": "2026-06"},
     "role": "프론트엔드 개발",
     "summary": "건강검진 데이터를 분석 리포트로 제공하는 서비스를 구축하고, 리포트 UI를 여러 프로젝트에서 재사용할 수 있도록 패키지로 분리했습니다.",
-    "techStack": ["Vue 3", "Vite", "Swiper", "Docker", "Nginx"],
+    "techStack": ["Vue 3", "Docker", "Nginx"],
     "contributions": [
       {
         "title": "데이터 기반 리포트 화면",
         "items": [
-          "Vue 3 + Vite 기반 SPA와 건강나이·체형분석·질환예측 등 11종 리포트 페이지 개발",
+          "Vue 3 기반 SPA와 건강나이·체형분석·질환예측 등 11종 리포트 페이지 개발",
           "암·뇌혈관·심장질환·치매 예측 API 데이터를 연결하고 위험도 게이지·위험 요인·개선 시뮬레이션 UI 구현",
           "데이터 유무에 따라 필요한 리포트 페이지만 표시하도록 조건부 렌더링 설계"
         ]
@@ -61,7 +61,7 @@
         "title": "인증 및 미리보기",
         "items": [
           "본인인증 코드 검증부터 리포트 생성까지의 흐름과 단계별 로딩 UI 구현",
-          "Swiper 기반 리포트 미리보기와 썸네일 페이지 이동 구현",
+          "리포트 미리보기 슬라이드와 썸네일 페이지 이동 구현",
           "PDF 이메일 전송 기능 연동"
         ]
       },
@@ -85,7 +85,7 @@
     "period": {"start": "2025-08", "end": "2026-06"},
     "role": "프론트엔드 개발",
     "summary": "건강코칭 운영자를 위한 관리자 웹을 개발했습니다. 공통 UI와 상태 처리를 정리하고 콘텐츠 관리·실시간 채팅·영상 미리보기를 구현했습니다.",
-    "techStack": ["Vue.js", "Vuex", "Vue Router", "REST API", "SCSS", "Axios", "HTML", "Quill", "STOMP", "WebSocket", "hls.js", "ECharts"],
+    "techStack": ["Vue.js", "Vuex", "SCSS", "STOMP", "WebSocket", "hls.js", "ECharts"],
     "contributions": [
       {
         "title": "재사용 가능한 공통 UI",
@@ -103,7 +103,7 @@
         "items": [
           "운동 콘텐츠의 파일과 JSON 데이터를 함께 전송하는 multipart 업로드 구현",
           "영상 메타데이터 추출 API로 예상 칼로리·길이·파일명 자동 입력",
-          "게시판·이벤트·공지의 기본형·프로모션 분기 처리 및 Quill 에디터 빈 값 검증",
+          "게시판·이벤트·공지의 기본형·프로모션 분기 처리 및 에디터 빈 값 검증",
           "첨부파일을 UUID 단위로 개별 삭제하도록 수정해 전체 삭제 문제 해결"
         ]
       },
@@ -131,7 +131,7 @@
     "period": {"start": "2025-07", "end": "2026-06"},
     "role": "프론트엔드 개발",
     "summary": "건강기록과 검진 결과를 관리하는 하이브리드 앱의 웹 화면을 개발하고, 웹뷰와 네이티브 앱 사이의 통신을 설계했습니다.",
-    "techStack": ["Vue 3", "Tailwind CSS", "SCSS", "Pinia", "Axios", "App Bridge"],
+    "techStack": ["Vue 3", "Tailwind CSS", "SCSS", "Pinia", "App Bridge"],
     "contributions": [
       {
         "title": "건강기록 관리",
@@ -165,14 +165,11 @@
     "period": {"start": "2023-08", "end": "2024-07"},
     "role": "프론트엔드 개발",
     "summary": "폴바셋 웹앱의 상품 선택·결제·개인화 기능을 개발했습니다. 입력 검증과 설정 복원, iOS 호환성 개선을 담당했습니다.",
-    "techStack": ["Vue.js", "Vuex", "Vue Router", "REST API", "SCSS", "Axios", "HTML", "vue-lazyload"],
+    "techStack": ["Vue.js", "Vuex", "SCSS"],
     "contributions": [
       {
         "title": "메인 화면 및 성능",
-        "items": [
-          "메인 팝업 노출 제어 구현 및 iOS 호환성 문제에 대한 세션스토리지 방식 대응",
-          "vue-lazyload를 적용해 이미지 지연 로딩 구현"
-        ]
+        "items": ["메인 팝업 노출 제어 구현 및 iOS 호환성 문제에 대한 세션스토리지 방식 대응", "이미지 지연 로딩 적용"]
       },
       {
         "title": "상품 및 결제",
@@ -205,7 +202,7 @@
     "period": {"start": null, "end": null},
     "role": "웹앱 개발 참여",
     "summary": "계란이력관리 웹앱 개발에 참여했습니다.",
-    "techStack": ["Vue.js", "React Native", "HTML", "SCSS", "CSS"],
+    "techStack": ["Vue.js", "React Native", "SCSS"],
     "contributions": [],
     "outcomes": [],
     "images": [],
@@ -219,7 +216,7 @@
     "period": {"start": null, "end": null},
     "role": "앱 퍼블리싱 참여",
     "summary": "건강보험공단 똑똑건강UP 앱 퍼블리싱에 참여했습니다.",
-    "techStack": ["JavaScript", "HTML", "SCSS", "CSS", "jQuery"],
+    "techStack": ["JavaScript", "SCSS", "jQuery"],
     "contributions": [],
     "outcomes": [],
     "images": [],
@@ -233,7 +230,7 @@
     "period": {"start": null, "end": null},
     "role": "웹 퍼블리싱",
     "summary": "DDP(동대문 디자인 플라자) 프로모션 웹 페이지를 퍼블리싱했습니다.",
-    "techStack": ["JavaScript", "HTML", "SCSS", "CSS", "jQuery"],
+    "techStack": ["JavaScript", "SCSS", "jQuery"],
     "contributions": [],
     "outcomes": [],
     "images": [],
